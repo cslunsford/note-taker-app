@@ -20,7 +20,7 @@ app.get('*', (req, res) => {
 });
 
 app.get('/api/notes', (req, res) => {
-    fs.readFile('db.json', 'utf8', (error, data) => {
+    fs.readFile('./db/db.json', 'utf8', (error, data) => {
         if (error) {
             res.status(500).json({ error: 'Unable to read notes.' });
         } else {
@@ -32,14 +32,14 @@ app.get('/api/notes', (req, res) => {
 
 app.post('/api/notes', (req, res) => {
     const newNote = req.body;
-    fs.readFile('db.json', 'utf8', (error, data) => {
+    fs.readFile('./db/db.json', 'utf8', (error, data) => {
         if (error) {
             res.status(500).json({ error: 'Unable to read notes.' });
         } else {
             const notes = JSON.parse(data);
             newNote.id = uuid.v4();
             notes.push(newNote);
-            fs.writeFile('db.json', JSON.stringify(notes), (error) => {
+            fs.writeFile('./db/db.json', JSON.stringify(notes), (error) => {
                 if (error) {
                     res.status(500).json({ error: 'Unable to write notes.' });
                 } else {
