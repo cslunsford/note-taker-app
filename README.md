@@ -11,4 +11,7 @@
 
   ## Link to Webpage
   [Click Here](https://vast-everglades-38482-ab05ec2f7e38.herokuapp.com/)
-  
+
+  ## Screenshots of Webpage
+  ![Screenshot One](public/assets/images/Screenshot 2023-08-21 at 9.38.19 PM.png)
+  ![Screenshot Two](public/assets/images/Screenshot 2023-08-21 at 9.38.29 PM.png)
